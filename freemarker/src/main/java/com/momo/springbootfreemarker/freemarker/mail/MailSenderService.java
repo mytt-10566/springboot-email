@@ -38,7 +38,7 @@ public class MailSenderService {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
             helper.setFrom(sender);
             helper.setTo(receiver);
-            helper.setSubject("主题：模板邮件");
+            helper.setSubject("模板邮件");
 
             Map<String, Object> model = new HashMap();
             model.put("userName", "小明");

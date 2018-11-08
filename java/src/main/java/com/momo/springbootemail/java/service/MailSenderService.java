@@ -31,7 +31,7 @@ public class MailSenderService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(sender);
         message.setTo(receiver);
-        message.setSubject("主题：简单邮件");
+        message.setSubject("简单文本邮件");
         message.setText("测试邮件内容");
         mailSender.send(message);
     }
@@ -43,7 +43,7 @@ public class MailSenderService {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
             helper.setFrom(sender);
             helper.setTo(receiver);
-            helper.setSubject("标题：发送Html内容");
+            helper.setSubject("html邮件");
 
             StringBuffer sb = new StringBuffer();
             sb.append("<h1>大标题-h1</h1>")
@@ -64,7 +64,7 @@ public class MailSenderService {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
             helper.setFrom(sender);
             helper.setTo(receiver);
-            helper.setSubject("主题：带附件的邮件");
+            helper.setSubject("带附件的邮件");
             helper.setText("带附件的邮件内容");
             FileSystemResource file = new FileSystemResource(new File("src/main/resources/static/1.jpg"));
             // 加入邮件
